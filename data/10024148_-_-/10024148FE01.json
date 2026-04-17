@@ -1,0 +1,40 @@
+{
+  "naviglassId": "10024148FE01",
+  "libArticle": "CLIMALIT ACOUSTIC PROTECT DESIGN",
+  "verre1": {
+    "description": "STADIP PROTECT 44.2 SATINOVO ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": 2
+  },
+  "espaceur1": {
+    "typeIntercalaire": "TGI",
+    "couleurIntercalaire": "noir",
+    "espaceGaz": 24,
+    "typeGaz": "air"
+  },
+  "verre2": {
+    "description": "STADIP PROTECT 44.2 SATINOVO ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2025-01-23T23:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": null,
+  "classeAcoustique": "AR1",
+  "extension": "",
+  "origineFranceGarantie": true,
+  "coefficientThermique": 2.7,
+  "stadip": false
+}

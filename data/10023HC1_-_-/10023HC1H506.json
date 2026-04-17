@@ -1,0 +1,40 @@
+{
+  "naviglassId": "10023HC1H506",
+  "libArticle": "CLIMAPLUS XN ACOUSTIC ",
+  "verre1": {
+    "description": "PLANICLEAR ou équivalent",
+    "lien": null,
+    "epaisseur": 6.0,
+    "codeVisuel": 0,
+    "position": 0
+  },
+  "espaceur1": {
+    "typeIntercalaire": "TGI ",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 18,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "PLANITHERM XN ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 0,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2023-05-29T22:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": "TR9",
+  "classeAcoustique": "AR2",
+  "extension": "",
+  "origineFranceGarantie": true,
+  "coefficientThermique": 1.1,
+  "stadip": false
+}

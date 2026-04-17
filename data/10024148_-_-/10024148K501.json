@@ -1,0 +1,40 @@
+{
+  "naviglassId": "10024148K501",
+  "libArticle": "CLIMAPLUS XN SOLAR CONTROL AC SP",
+  "verre1": {
+    "description": "STADIP SILENCE 44.2 PLANITHERM XN ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": 2
+  },
+  "espaceur1": {
+    "typeIntercalaire": "TGI",
+    "couleurIntercalaire": "noir",
+    "espaceGaz": 14,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "REFLECHISSANT BRONZE STADIP PROTECT 44.2 ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": 4
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2024-11-26T23:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": "TR9",
+  "classeAcoustique": "",
+  "extension": "",
+  "origineFranceGarantie": true,
+  "coefficientThermique": 1.1,
+  "stadip": true
+}

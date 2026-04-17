@@ -1,0 +1,40 @@
+{
+  "naviglassId": "100241481205",
+  "libArticle": "CLIMAPLUS ECLAZ ZEN DESIGN",
+  "verre1": {
+    "description": "SATINOVO CLAIR ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 2,
+    "position": 3
+  },
+  "espaceur1": {
+    "typeIntercalaire": "TGI",
+    "couleurIntercalaire": "noir",
+    "espaceGaz": 16,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "ECLAZ ZEN ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 0,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2024-12-15T23:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": "TR1",
+  "classeAcoustique": "AR1",
+  "extension": "",
+  "origineFranceGarantie": false,
+  "coefficientThermique": 1.9,
+  "stadip": false
+}

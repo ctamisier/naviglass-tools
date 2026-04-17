@@ -1,0 +1,40 @@
+{
+  "naviglassId": "100241486704",
+  "libArticle": "CLIMAPLUS PROTECT ECLAZ LUMI",
+  "verre1": {
+    "description": "STADIP PROTECT 44.2 (209) ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": null
+  },
+  "espaceur1": {
+    "typeIntercalaire": "TGI",
+    "couleurIntercalaire": "noir",
+    "espaceGaz": 15,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "ECLAZ LUMI ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 0,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2024-11-27T23:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": "TR1",
+  "classeAcoustique": "AR2",
+  "extension": "",
+  "origineFranceGarantie": true,
+  "coefficientThermique": 1.9,
+  "stadip": false
+}

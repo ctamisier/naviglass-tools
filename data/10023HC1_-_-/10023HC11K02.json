@@ -1,0 +1,40 @@
+{
+  "naviglassId": "10023HC11K02",
+  "libArticle": "IMPRIME 200 (4 MM) SPV0416ISOL 3 44/2 ",
+  "verre1": {
+    "description": "ARENA C ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 2,
+    "position": 2
+  },
+  "espaceur1": {
+    "typeIntercalaire": "TGI ",
+    "couleurIntercalaire": "noir ",
+    "espaceGaz": 16,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "STADIP SILENCE 44.2 PLANITHERM XN ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2023-05-30T22:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": "TR9",
+  "classeAcoustique": "39(-1;-5)",
+  "extension": "",
+  "origineFranceGarantie": false,
+  "coefficientThermique": 1.1,
+  "stadip": true
+}

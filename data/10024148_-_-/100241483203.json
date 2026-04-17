@@ -1,0 +1,40 @@
+{
+  "naviglassId": "100241483203",
+  "libArticle": "CLIMAPLUS XN SILENCE",
+  "verre1": {
+    "description": "STADIP PR 66.2 CL ST BRIGHT SILVER PLC ou équivalent",
+    "lien": null,
+    "epaisseur": 13.0,
+    "codeVisuel": 1,
+    "position": 2
+  },
+  "espaceur1": {
+    "typeIntercalaire": "TGI",
+    "couleurIntercalaire": "noir",
+    "espaceGaz": 20,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "STADIP PROTECT 33.2 PLANITHERM XN ou équivalent",
+    "lien": null,
+    "epaisseur": 7.0,
+    "codeVisuel": 1,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2024-12-05T23:00:00.000+00:00",
+  "cekal": false,
+  "centreProduction": "300",
+  "performanceThermique": "TR9",
+  "classeAcoustique": "AR4",
+  "extension": "",
+  "origineFranceGarantie": true,
+  "coefficientThermique": 1.1,
+  "stadip": false
+}

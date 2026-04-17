@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naviglass — Export</title>
+  </head>
+  <body>
+    <h1>Naviglass</h1>
+
+    <div>
+      <textarea
+        id="codes-input"
+        rows="2"
+        style="width: 80%; font-family: monospace; font-size: 12px"
+      ></textarea>
+      <button id="fetch-btn" onclick="fetchAll()">Lancer</button>
+    </div>
+
+    <div style="margin: 6px 0">
+      <button id="export-btn" onclick="exportCSV()" style="display: none">
+        Exporter CSV
+      </button>
+      <span id="status" style="font-size: 13px"></span>
+    </div>
+
+    <div id="progress-wrap" style="display: none; margin: 4px 0">
+      <progress
+        id="progress-fill"
+        value="0"
+        max="100"
+        style="width: 100%"
+      ></progress>
+    </div>
+
+    <div id="table-wrap" style="overflow-x: auto"></div>
+
+    <script>
+      const COLUMNS = [
+        { key: 'naviglassId', label: 'ID Naviglass' },
+        { key: 'libArticle', label: 'Désignation' },
+        { key: 'dateCommande', label: 'Date commande' },
+        { key: 'centreProduction', label: 'Centre prod.' },
+        { key: 'performanceThermique', label: 'Perf. thermique' },
+        { key: 'coefficientThermique', label: 'Ug (W/m²·K)' },
+        { key: 'classeAcoustique', label: 'Classe acoustique' },
+        { key: 'cekal', label: 'CEKAL' },
+        { key: 'origineFranceGarantie', label: 'Origine FR' },
+        { key: 'stadip', label: 'STADIP' },
+        { key: 'extension', label: 'Extension' },
+        { key: 'verre1.description', label: 'Verre 1 desc.' },
+        { key: 'verre1.epaisseur', label: 'Verre 1 ép. (mm)' },
+        { key: 'verre1.codeVisuel', label: 'Verre 1 code vis.' },
+        { key: 'verre1.position', label: 'Verre 1 pos.' },
+        { key: 'espaceur1.typeIntercalaire', label: 'Espaceur.1 type' },
+        { key: 'espaceur1.couleurIntercalaire', label: 'Espaceur.1 couleur' },
+        { key: 'espaceur1.espaceGaz', label: 'Espaceur.1 lame (mm)' },
+        { key: 'espaceur1.typeGaz', label: 'Espaceur.1 gaz' },
+        { key: 'verre2.description', label: 'Verre 2 desc.' },
+        { key: 'verre2.epaisseur', label: 'Verre 2 ép. (mm)' },
+        { key: 'verre2.codeVisuel', label: 'Verre 2 code vis.' },
+        { key: 'verre2.position', label: 'Verre 2 pos.' },
+        { key: 'espaceur2.typeIntercalaire', label: 'Espaceur.2 type' },
+        { key: 'espaceur2.couleurIntercalaire', label: 'Espaceur.2 couleur' },
+        { key: 'espaceur2.espaceGaz', label: 'Espaceur.2 lame (mm)' },
+        { key: 'espaceur2.typeGaz', label: 'Espaceur.2 gaz' },
+        { key: 'verre3', label: 'Verre 3' },
+      ];
+
+      let allResults = [];
+
+      function parseCodes(raw) {
+        return raw
+          .split(/[\s,;]+/)
+          .map((s) => s.trim())
+          .filter((s) => s.length > 0);
+      }
+
+      function getVal(obj, key) {
+        const parts = key.split('.');
+        let v = obj;
+        for (const p of parts) v = v?.[p];
+        return v ?? '';
+      }
+
+      function renderCell(key, val) {
+        if (typeof val === 'boolean') return val ? 'Oui' : 'Non';
+        if (key === 'dateCommande' && val) return val.toString().split('T')[0];
+        if (val === '' || val === null || val === undefined) return '—';
+        if (typeof val === 'string') return val.trim() || '—';
+        return val;
+      }
+
+      function buildTable(rows) {
+        const wrap = document.getElementById('table-wrap');
+        if (!rows.length) {
+          wrap.innerHTML = '';
+          return;
+        }
+        let html =
+          '<table border="1" style="border-collapse:collapse;font-size:12px;white-space:nowrap"><thead><tr>';
+        for (const col of COLUMNS)
+          html += `<th style="padding:4px 8px;background:#eee">${col.label}</th>`;
+        html += '</tr></thead><tbody>';
+        for (const row of rows) {
+          if (row._error) {
+            html += `<tr><td style="padding:4px 8px;color:red">${
+              row._code
+            }</td><td colspan="${
+              COLUMNS.length - 1
+            }" style="padding:4px 8px;color:red">${row._error}</td></tr>`;
+            continue;
+          }
+          html += '<tr>';
+          for (const col of COLUMNS) {
+            const raw = getVal(row, col.key);
+            html += `<td style="padding:4px 8px">${renderCell(
+              col.key,
+              raw,
+            )}</td>`;
+          }
+          html += '</tr>';
+        }
+        html += '</tbody></table>';
+        wrap.innerHTML = html;
+      }
+
+      async function fetchAll() {
+        const codes = parseCodes(document.getElementById('codes-input').value);
+        if (!codes.length) {
+          document.getElementById('status').textContent = 'Aucun code trouvé.';
+          return;
+        }
+        const btn = document.getElementById('fetch-btn');
+        btn.disabled = true;
+        document.getElementById('export-btn').style.display = 'none';
+        document.getElementById('progress-wrap').style.display = 'block';
+        document.getElementById('table-wrap').innerHTML = '';
+        allResults = [];
+        for (let i = 0; i < codes.length; i++) {
+          const code = codes[i];
+          document.getElementById('status').textContent = `${i + 1}/${
+            codes.length
+          } — ${code}`;
+          document.getElementById('progress-fill').value = Math.round(
+            (i / codes.length) * 100,
+          );
+          try {
+            const res = await fetch(`http://localhost:3000/fiche?code=${code}`);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            allResults.push(data);
+          } catch (e) {
+            allResults.push({ _code: code, _error: e.message });
+          }
+        }
+        document.getElementById('progress-fill').value = 100;
+        const ok = allResults.filter((r) => !r._error).length;
+        document.getElementById('status').textContent =
+          `Terminé — ${ok}/${codes.length} récupérés`;
+        btn.disabled = false;
+        buildTable(allResults);
+        if (ok > 0)
+          document.getElementById('export-btn').style.display = 'inline';
+      }
+
+      function exportCSV() {
+        const rows = allResults.filter((r) => !r._error);
+        if (!rows.length) return;
+        const header = COLUMNS.map((c) => `"${c.label}"`).join(';');
+        const lines = rows.map((row) =>
+          COLUMNS.map((col) => {
+            let v = getVal(row, col.key);
+            if (typeof v === 'boolean') v = v ? 'Oui' : 'Non';
+            if (typeof v === 'string') v = v.trim();
+            if (col.key === 'dateCommande' && v) v = v.toString().split('T')[0];
+            return `"${String(v ?? '').replace(/"/g, '""')}"`;
+          }).join(';'),
+        );
+        const csv = '\uFEFF' + [header, ...lines].join('\r\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'naviglass_export.csv';
+        a.click();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "naviglassId": "100241482309",
+  "libArticle": "CLIMAPLUS XN SILENCE",
+  "verre1": {
+    "description": "STADIP SILENCE 44.2 ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": null
+  },
+  "espaceur1": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 12,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "PLANITHERM XN ou équivalent",
+    "lien": null,
+    "epaisseur": 10.0,
+    "codeVisuel": 0,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2024-11-21T23:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": "TR1",
+  "classeAcoustique": "41(0;-4)",
+  "extension": "",
+  "origineFranceGarantie": true,
+  "coefficientThermique": 1.9,
+  "stadip": true
+}

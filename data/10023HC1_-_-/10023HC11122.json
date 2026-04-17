@@ -1,0 +1,40 @@
+{
+  "naviglassId": "10023HC11122",
+  "libArticle": "CLIMAPLUS ONE ",
+  "verre1": {
+    "description": "PLANITHERM ONE ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 0,
+    "position": 2
+  },
+  "espaceur1": {
+    "typeIntercalaire": "ALU ",
+    "couleurIntercalaire": "noir ",
+    "espaceGaz": 16,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "PLANICLEAR ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 0,
+    "position": 0
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2023-06-08T22:00:00.000+00:00",
+  "cekal": true,
+  "centreProduction": "300",
+  "performanceThermique": "TR10",
+  "classeAcoustique": "AR1",
+  "extension": "",
+  "origineFranceGarantie": true,
+  "coefficientThermique": 1.0,
+  "stadip": false
+}

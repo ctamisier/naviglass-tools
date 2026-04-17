@@ -1,0 +1,40 @@
+{
+  "naviglassId": "100241486103",
+  "libArticle": "CLIMAPLUS XN PROTECT DESIGN",
+  "verre1": {
+    "description": "STADIP PROTECT 44.2 PLANITHERM XN ou équivalent",
+    "lien": null,
+    "epaisseur": 9.0,
+    "codeVisuel": 1,
+    "position": 2
+  },
+  "espaceur1": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 16,
+    "typeGaz": "argon"
+  },
+  "verre2": {
+    "description": "ARENA C ou équivalent",
+    "lien": null,
+    "epaisseur": 4.0,
+    "codeVisuel": 2,
+    "position": 3
+  },
+  "espaceur2": {
+    "typeIntercalaire": "ALU",
+    "couleurIntercalaire": "naturel",
+    "espaceGaz": 0,
+    "typeGaz": "air"
+  },
+  "verre3": null,
+  "dateCommande": "2024-11-27T23:00:00.000+00:00",
+  "cekal": false,
+  "centreProduction": "300",
+  "performanceThermique": "TR9",
+  "classeAcoustique": "AR2",
+  "extension": "",
+  "origineFranceGarantie": false,
+  "coefficientThermique": 1.1,
+  "stadip": false
+}
